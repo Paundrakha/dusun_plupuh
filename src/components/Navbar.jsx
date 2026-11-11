@@ -103,7 +103,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-tosca-900/98 lg:hidden"
+            className="fixed inset-0 z-[60] bg-tosca-900 lg:hidden overflow-y-auto"
           >
             <div className="flex justify-between items-center px-6 py-6">
               <span className="text-white font-bold text-lg">{siteInfo.name}</span>
@@ -118,7 +118,7 @@ export default function Navbar() {
                 open: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
                 closed: {},
               }}
-              className="flex flex-col items-center gap-6 mt-12"
+              className="flex flex-col items-center gap-5 mt-8 pb-12"
             >
               {navLinks.map((link) => (
                 <MotionLink

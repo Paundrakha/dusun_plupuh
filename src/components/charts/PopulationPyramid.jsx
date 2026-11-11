@@ -10,6 +10,48 @@ export const COLOR_PEREMPUAN = "#fd7213";
  * Piramida penduduk: laki-laki di kiri, perempuan di kanan,
  * kelompok umur tertua di atas. Setiap batang diberi angka.
  */
+function MobileBar({ label, value, color, max, delay }) {
+  return (
+    <div className="flex items-center gap-2">
+      <span className="w-4 shrink-0 text-[11px] font-semibold text-ink-400">{label}</span>
+      <div className="flex-1 h-4 rounded-full bg-ink-100 dark:bg-ink-700 overflow-hidden">
+        <motion.div
+          className="h-full rounded-full"
+          style={{ backgroundColor: color }}
+          initial={{ width: 0 }}
+          whileInView={{ width: `${(value / max) * 100}%` }}
+          viewport={{ once: true, margin: "-20px" }}
+          transition={{ duration: 0.6, delay, ease: "easeOut" }}
+        />
+      </div>
+      <span className="w-9 shrink-0 text-right text-xs tabular-nums font-semibold text-ink-700 dark:text-ink-100">
+        {formatAngka(value)}
+      </span>
+    </div>
+  );
+}
+
+// Tampilan ponsel: piramida terlalu sempit, jadi tiap kelompok umur ditampilkan
+// sebagai dua batang bertumpuk (L / P) selebar penuh.
+function MobileList({ data, max }) {
+  return (
+    <div className="space-y-4">
+      {data.map((row, i) => (
+        <div key={row.label}>
+          <div className="flex items-baseline justify-between mb-1.5">
+            <span className="text-sm font-semibold text-ink-800 dark:text-white">{row.label} tahun</span>
+            <span className="text-xs text-ink-400 tabular-nums">{formatAngka(row.laki + row.perempuan)} jiwa</span>
+          </div>
+          <div className="space-y-1.5">
+            <MobileBar label="L" value={row.laki} color={COLOR_LAKI} max={max} delay={i * 0.03} />
+            <MobileBar label="P" value={row.perempuan} color={COLOR_PEREMPUAN} max={max} delay={i * 0.03} />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function PopulationPyramid({ data }) {
   const max = Math.max(...data.flatMap((d) => [d.laki, d.perempuan]), 1);
   const rows = [...data].reverse(); // tertua di atas
@@ -25,7 +67,11 @@ export default function PopulationPyramid({ data }) {
         </span>
       </div>
 
-      <div className="space-y-1.5">
+      <div className="sm:hidden">
+        <MobileList data={data} max={max} />
+      </div>
+
+      <div className="hidden sm:block space-y-1.5">
         {rows.map((row, i) => (
           <div key={row.label} className="grid grid-cols-[1fr_3.5rem_1fr] sm:grid-cols-[1fr_4.5rem_1fr] items-center gap-2">
             <div className="flex items-center justify-end gap-2">
@@ -54,7 +100,7 @@ export default function PopulationPyramid({ data }) {
           </div>
         ))}
       </div>
-      <p className="text-center text-xs text-ink-400 mt-4">Kelompok umur (tahun)</p>
+      <p className="hidden sm:block text-center text-xs text-ink-400 mt-4">Kelompok umur (tahun)</p>
     </div>
   );
 }

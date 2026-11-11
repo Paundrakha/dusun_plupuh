@@ -54,7 +54,7 @@ function Panel({ title, subtitle, children, className = "" }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5 }}
-      className={`bg-white dark:bg-ink-800 rounded-3xl p-6 md:p-8 shadow-card border border-ink-100/60 dark:border-ink-700 ${className}`}
+      className={`bg-white dark:bg-ink-800 rounded-3xl p-5 md:p-8 shadow-card border border-ink-100/60 dark:border-ink-700 ${className}`}
     >
       <h2 className="text-xl font-bold text-ink-900 dark:text-white">{title}</h2>
       {subtitle && <p className="text-sm text-ink-500 dark:text-ink-300 mt-1 mb-6">{subtitle}</p>}
