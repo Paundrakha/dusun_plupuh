@@ -1,3 +1,7 @@
+html {
+  color-scheme: light;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,11 +21,6 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark body {
-  background-color: #202325;
-  color: #e2e4e4;
 }
 
 ::-webkit-scrollbar {

@@ -36,7 +36,7 @@ export default function DonutChart({ items, total, centerLabel = "Total", label 
     <div className="flex flex-col sm:flex-row items-center gap-8">
       <div className="relative w-48 h-48 shrink-0">
         <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="w-full h-full -rotate-90" role="img" aria-label={label}>
-          <circle cx={SIZE / 2} cy={SIZE / 2} r={R} fill="none" strokeWidth={STROKE} className="stroke-ink-100 dark:stroke-ink-700" />
+          <circle cx={SIZE / 2} cy={SIZE / 2} r={R} fill="none" strokeWidth={STROKE} className="stroke-ink-100" />
           {segments.map((seg, i) => {
             const dash = Math.max(seg.length - (segments.length > 1 ? GAP : 0), 0.5);
             const dim = active && active !== seg.label;
@@ -64,10 +64,10 @@ export default function DonutChart({ items, total, centerLabel = "Total", label 
           })}
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 pointer-events-none">
-          <span className="text-2xl font-extrabold tabular-nums text-ink-900 dark:text-white">
+          <span className="text-2xl font-extrabold tabular-nums text-ink-900">
             {formatAngka(activeItem ? activeItem.jumlah : total)}
           </span>
-          <span className="text-[11px] leading-tight text-ink-500 dark:text-ink-300 mt-0.5">
+          <span className="text-[11px] leading-tight text-ink-500 mt-0.5">
             {activeItem ? activeItem.label : centerLabel}
           </span>
         </div>
@@ -84,8 +84,8 @@ export default function DonutChart({ items, total, centerLabel = "Total", label 
             }`}
           >
             <span className="w-3 h-3 rounded-sm shrink-0" style={{ backgroundColor: colorOf(item.label) }} />
-            <span className="flex-1 text-ink-700 dark:text-ink-200">{item.label}</span>
-            <span className="tabular-nums font-semibold text-ink-900 dark:text-white">{formatAngka(item.jumlah)}</span>
+            <span className="flex-1 text-ink-700">{item.label}</span>
+            <span className="tabular-nums font-semibold text-ink-900">{formatAngka(item.jumlah)}</span>
             <span className="w-14 text-right tabular-nums text-xs text-ink-400">{formatPersen(item.jumlah, total)}</span>
           </li>
         ))}

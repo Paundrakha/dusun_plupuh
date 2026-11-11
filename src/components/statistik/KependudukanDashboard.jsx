@@ -30,7 +30,7 @@ function SummaryCard({ icon: Icon, label, value, note, accent, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="bg-white dark:bg-ink-800 rounded-2xl p-6 shadow-card border border-ink-100/60 dark:border-ink-700"
+      className="bg-white rounded-2xl p-6 shadow-card border border-ink-100/60"
     >
       <div
         className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 text-white"
@@ -38,10 +38,10 @@ function SummaryCard({ icon: Icon, label, value, note, accent, index }) {
       >
         <Icon className="text-lg" />
       </div>
-      <p className="text-3xl md:text-4xl font-extrabold tabular-nums text-ink-900 dark:text-white">
+      <p className="text-3xl md:text-4xl font-extrabold tabular-nums text-ink-900">
         {formatAngka(counted)}
       </p>
-      <p className="text-sm font-medium text-ink-600 dark:text-ink-200 mt-1">{label}</p>
+      <p className="text-sm font-medium text-ink-600 mt-1">{label}</p>
       {note && <p className="text-xs text-ink-400 mt-1">{note}</p>}
     </motion.div>
   );
@@ -54,10 +54,10 @@ function Panel({ title, subtitle, children, className = "" }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5 }}
-      className={`bg-white dark:bg-ink-800 rounded-3xl p-5 md:p-8 shadow-card border border-ink-100/60 dark:border-ink-700 ${className}`}
+      className={`bg-white rounded-3xl p-5 md:p-8 shadow-card border border-ink-100/60 ${className}`}
     >
-      <h2 className="text-xl font-bold text-ink-900 dark:text-white">{title}</h2>
-      {subtitle && <p className="text-sm text-ink-500 dark:text-ink-300 mt-1 mb-6">{subtitle}</p>}
+      <h2 className="text-xl font-bold text-ink-900">{title}</h2>
+      {subtitle && <p className="text-sm text-ink-500 mt-1 mb-6">{subtitle}</p>}
       {!subtitle && <div className="mb-6" />}
       {children}
     </motion.section>
@@ -70,7 +70,7 @@ export default function KependudukanDashboard() {
   return (
     <div className="container-app py-14 md:py-20 space-y-8">
       {!meta.dataResmi && (
-        <div className="flex gap-3 rounded-2xl border border-harvest-200 bg-harvest-50 dark:bg-harvest-900/20 dark:border-harvest-800 p-4 text-sm text-harvest-800 dark:text-harvest-200">
+        <div className="flex gap-3 rounded-2xl border border-harvest-200 bg-harvest-50 p-4 text-sm text-harvest-800">
           <FaInfoCircle className="mt-0.5 shrink-0" />
           <p>
             Angka pada halaman ini masih <strong>data contoh</strong> dan belum bersumber dari data resmi padukuhan.
@@ -149,7 +149,7 @@ export default function KependudukanDashboard() {
             {formatPersen(jumlahPerempuan, jumlahPenduduk)}
           </motion.div>
         </div>
-        <div className="flex justify-between mt-3 text-sm text-ink-600 dark:text-ink-200">
+        <div className="flex justify-between mt-3 text-sm text-ink-600">
           <span>Laki-laki · {formatAngka(jumlahLaki)}</span>
           <span>Perempuan · {formatAngka(jumlahPerempuan)}</span>
         </div>

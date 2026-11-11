@@ -71,7 +71,7 @@ export default function Galeri() {
   const prevImage = () => setLightboxIndex((i) => (i - 1 + filtered.length) % filtered.length);
 
   return (
-    <section id="galeri" className="py-24 md:py-32 bg-section-gradient dark:bg-ink-800 transition-colors duration-300">
+    <section id="galeri" className="py-24 md:py-32 bg-section-gradient transition-colors duration-300">
       <div className="container-app">
         <SectionTitle
           eyebrow="Dokumentasi"
@@ -87,7 +87,7 @@ export default function Galeri() {
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeKategori === kat
                   ? "bg-tosca-600 text-white shadow-soft"
-                  : "bg-white dark:bg-ink-900 text-ink-600 dark:text-ink-200 hover:bg-tosca-100 dark:hover:bg-ink-700"
+                  : "bg-white text-ink-600 hover:bg-tosca-100"
               }`}
             >
               {kat}

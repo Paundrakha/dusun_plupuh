@@ -14,7 +14,7 @@ const infoCards = [
 
 export default function Profil() {
   return (
-    <section id="profil" className="relative py-24 md:py-32 bg-white dark:bg-ink-900 overflow-hidden transition-colors duration-300">
+    <section id="profil" className="relative py-24 md:py-32 bg-white overflow-hidden transition-colors duration-300">
       <div className="container-app">
         <SectionTitle
           eyebrow="Mengenal Kami"
@@ -31,18 +31,18 @@ export default function Profil() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-xl font-bold text-ink-900 dark:text-white mb-3">Sejarah Singkat</h3>
-              <p className="text-ink-500 dark:text-ink-300 leading-relaxed">{profilData.sejarah}</p>
+              <h3 className="text-xl font-bold text-ink-900 mb-3">Sejarah Singkat</h3>
+              <p className="text-ink-500 leading-relaxed">{profilData.sejarah}</p>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-ink-900 dark:text-white mb-3">Visi</h3>
-              <p className="text-ink-500 dark:text-ink-300 leading-relaxed">{profilData.visi}</p>
+              <h3 className="text-xl font-bold text-ink-900 mb-3">Visi</h3>
+              <p className="text-ink-500 leading-relaxed">{profilData.visi}</p>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-ink-900 dark:text-white mb-3">Misi</h3>
+              <h3 className="text-xl font-bold text-ink-900 mb-3">Misi</h3>
               <ul className="space-y-2">
                 {profilData.misi.map((item, i) => (
-                  <li key={i} className="flex gap-3 text-ink-500 dark:text-ink-300 leading-relaxed">
+                  <li key={i} className="flex gap-3 text-ink-500 leading-relaxed">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-tosca-500 shrink-0" />
                     {item}
                   </li>
@@ -63,7 +63,7 @@ export default function Profil() {
                 >
                   <card.icon className="text-tosca-600 text-xl mb-3" />
                   <p className="text-xs text-ink-400 mb-1">{card.label}</p>
-                  <p className="text-sm font-semibold text-ink-900 dark:text-white">{card.value}</p>
+                  <p className="text-sm font-semibold text-ink-900">{card.value}</p>
                 </motion.div>
               ))}
             </div>
@@ -75,7 +75,7 @@ export default function Profil() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-xl font-bold text-ink-900 dark:text-white mb-8">Perjalanan Padukuhan</h3>
+            <h3 className="text-xl font-bold text-ink-900 mb-8">Perjalanan Padukuhan</h3>
             <div className="relative pl-8 border-l-2 border-tosca-200 space-y-10">
               {profilData.timeline.map((item, i) => (
                 <motion.div
@@ -88,17 +88,17 @@ export default function Profil() {
                 >
                   <span className="absolute -left-[2.35rem] top-0 w-4 h-4 rounded-full bg-tosca-600 ring-4 ring-tosca-100" />
                   <span className="text-tosca-600 font-bold text-sm">{item.year}</span>
-                  <h4 className="text-lg font-semibold text-ink-900 dark:text-white mt-1">{item.title}</h4>
-                  <p className="text-ink-500 dark:text-ink-300 text-sm mt-1.5 leading-relaxed">{item.desc}</p>
+                  <h4 className="text-lg font-semibold text-ink-900 mt-1">{item.title}</h4>
+                  <p className="text-ink-500 text-sm mt-1.5 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-10 bg-section-gradient dark:bg-ink-800 rounded-2xl p-6 shadow-card">
-              <h4 className="font-semibold text-ink-900 dark:text-white mb-3">Fokus Pengembangan Saat Ini</h4>
-              <p className="text-ink-500 dark:text-ink-300 text-sm leading-relaxed">
+            <div className="mt-10 bg-section-gradient rounded-2xl p-6 shadow-card">
+              <h4 className="font-semibold text-ink-900 mb-3">Fokus Pengembangan Saat Ini</h4>
+              <p className="text-ink-500 text-sm leading-relaxed">
                 Padukuhan Plupuh kini berfokus mengembangkan{" "}
-                <span className="font-semibold text-tosca-600 dark:text-tosca-300">Jagad Bambu Nusantara</span> —
+                <span className="font-semibold text-tosca-600">Jagad Bambu Nusantara</span> —
                 wisata konservasi bambu yang menjadi penggerak ekonomi warga sekaligus benteng ekologis
                 di lereng Gunung Merapi.
               </p>

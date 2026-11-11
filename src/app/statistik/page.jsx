@@ -21,7 +21,7 @@ export default function StatistikPage() {
           </p>
         </div>
       </header>
-      <div className="bg-section-gradient dark:bg-ink-900 transition-colors duration-300">
+      <div className="bg-section-gradient transition-colors duration-300">
         <KependudukanDashboard />
       </div>
     </>

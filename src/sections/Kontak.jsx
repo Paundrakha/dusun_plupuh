@@ -36,7 +36,7 @@ export default function Kontak() {
   return (
     <section
       id="kontak"
-      className="py-24 md:py-32 bg-white dark:bg-ink-900 transition-colors duration-300"
+      className="py-24 md:py-32 bg-white transition-colors duration-300"
     >
       <div className="container-app">
         <SectionTitle
@@ -57,17 +57,17 @@ export default function Kontak() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
               whileHover={{ x: 6 }}
-              className="flex items-center gap-4 bg-section-gradient dark:bg-ink-800 rounded-2xl p-5 shadow-card"
+              className="flex items-center gap-4 bg-section-gradient rounded-2xl p-5 shadow-card"
             >
-              <div className="w-12 h-12 rounded-xl bg-white dark:bg-ink-900 flex items-center justify-center shadow-card shrink-0">
-                <card.Icon className="text-tosca-600 dark:text-tosca-300 text-lg" />
+              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-card shrink-0">
+                <card.Icon className="text-tosca-600 text-lg" />
               </div>
 
               <div>
-                <p className="text-xs text-ink-400 dark:text-ink-400">
+                <p className="text-xs text-ink-400">
                   {card.label}
                 </p>
-                <p className="font-semibold text-ink-900 dark:text-white text-sm">
+                <p className="font-semibold text-ink-900 text-sm">
                   {card.value}
                 </p>
               </div>

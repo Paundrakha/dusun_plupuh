@@ -7,7 +7,7 @@ import { siteInfo } from "@/data/siteData";
 
 export default function Lokasi() {
   return (
-    <section id="lokasi" className="py-24 md:py-32 bg-section-gradient dark:bg-ink-800 transition-colors duration-300">
+    <section id="lokasi" className="py-24 md:py-32 bg-section-gradient transition-colors duration-300">
       <div className="container-app">
         <SectionTitle
           eyebrow="Kunjungi Kami"
@@ -20,7 +20,7 @@ export default function Lokasi() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white dark:bg-ink-900 rounded-3xl shadow-card overflow-hidden"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white rounded-3xl shadow-card overflow-hidden"
         >
           <div className="lg:col-span-2 h-80 lg:h-auto">
             <iframe
@@ -36,10 +36,10 @@ export default function Lokasi() {
           </div>
 
           <div className="p-8 flex flex-col justify-center">
-            <FaMapMarkerAlt className="text-tosca-600 dark:text-tosca-300 text-3xl mb-4" />
-            <h3 className="font-bold text-ink-900 dark:text-white text-xl mb-3">Alamat Lengkap</h3>
-            <p className="text-ink-500 dark:text-ink-300 leading-relaxed mb-2">{siteInfo.address}</p>
-            <p className="text-ink-400 dark:text-ink-400 text-xs mb-6">Plus code: {siteInfo.plusCode}</p>
+            <FaMapMarkerAlt className="text-tosca-600 text-3xl mb-4" />
+            <h3 className="font-bold text-ink-900 text-xl mb-3">Alamat Lengkap</h3>
+            <p className="text-ink-500 leading-relaxed mb-2">{siteInfo.address}</p>
+            <p className="text-ink-400 text-xs mb-6">Plus code: {siteInfo.plusCode}</p>
             <a
               href={siteInfo.mapsDirectionUrl}
               target="_blank"

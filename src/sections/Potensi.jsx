@@ -18,7 +18,7 @@ const iconMap = {
 
 export default function Potensi() {
   return (
-    <section id="potensi" className="py-24 md:py-32 bg-section-gradient dark:bg-ink-800 transition-colors duration-300">
+    <section id="potensi" className="py-24 md:py-32 bg-section-gradient transition-colors duration-300">
       <div className="container-app">
         <SectionTitle
           eyebrow="Kekuatan Kami"
@@ -39,12 +39,12 @@ export default function Potensi() {
                 whileHover={{ y: -8 }}
                 className="group relative rounded-2xl p-[2px] bg-gradient-to-br from-tosca-300 via-tosca-100 to-harvest-200 hover:from-tosca-500 hover:to-harvest-400 transition-all duration-300"
               >
-                <div className="bg-white dark:bg-ink-900 rounded-2xl p-7 h-full">
-                  <div className="w-14 h-14 rounded-xl bg-tosca-50 dark:bg-ink-800 flex items-center justify-center mb-5 group-hover:bg-tosca-100 dark:group-hover:bg-ink-700 transition-colors duration-300">
+                <div className="bg-white rounded-2xl p-7 h-full">
+                  <div className="w-14 h-14 rounded-xl bg-tosca-50 flex items-center justify-center mb-5 group-hover:bg-tosca-100 transition-colors duration-300">
                     <Icon className="text-tosca-600 text-2xl" />
                   </div>
-                  <h3 className="font-bold text-lg text-ink-900 dark:text-white mb-2">{item.title}</h3>
-                  <p className="text-ink-500 dark:text-ink-300 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="font-bold text-lg text-ink-900 mb-2">{item.title}</h3>
+                  <p className="text-ink-500 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
             );

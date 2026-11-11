@@ -9,7 +9,7 @@ import { wisataData, siteInfo } from "@/data/siteData";
 
 export default function Wisata() {
   return (
-    <section id="wisata" className="py-24 md:py-32 bg-white dark:bg-ink-900 transition-colors duration-300">
+    <section id="wisata" className="py-24 md:py-32 bg-white transition-colors duration-300">
       <div className="container-app">
         <SectionTitle
           eyebrow="Fokus Pengembangan"
@@ -24,7 +24,7 @@ export default function Wisata() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-ink-500 dark:text-ink-300 leading-relaxed mb-8">{wisataData.deskripsi}</p>
+            <p className="text-ink-500 leading-relaxed mb-8">{wisataData.deskripsi}</p>
             <div className="flex flex-wrap gap-4">
               <Button href={siteInfo.instagram} variant="outline" icon={FaInstagram}>
                 Instagram
@@ -75,15 +75,15 @@ export default function Wisata() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -6 }}
-              className="bg-section-gradient dark:bg-ink-800 rounded-2xl p-6 shadow-card"
+              className="bg-section-gradient rounded-2xl p-6 shadow-card"
             >
-              <h3 className="font-bold text-ink-900 dark:text-white mb-2">{item.title}</h3>
-              <p className="text-ink-500 dark:text-ink-300 text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="font-bold text-ink-900 mb-2">{item.title}</h3>
+              <p className="text-ink-500 text-sm leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        <p className="text-center text-ink-400 dark:text-ink-400 text-xs mt-10">
+        <p className="text-center text-ink-400 text-xs mt-10">
           {/* Foto ilustrasi hutan bambu di atas bersifat sementara — ganti dengan foto asli dari akun sosial media Jagad Bambu Nusantara. */}
         </p>
       </div>

@@ -23,7 +23,7 @@ export default function SectionTitle({ eyebrow, title, subtitle, align = "center
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.05 }}
-        className="text-3xl md:text-4xl lg:text-5xl font-bold text-ink-900 dark:text-white leading-tight"
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-ink-900 leading-tight"
       >
         {title}
       </motion.h2>
@@ -33,7 +33,7 @@ export default function SectionTitle({ eyebrow, title, subtitle, align = "center
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-4 text-ink-500 dark:text-ink-300 text-base md:text-lg"
+          className="mt-4 text-ink-500 text-base md:text-lg"
         >
           {subtitle}
         </motion.p>

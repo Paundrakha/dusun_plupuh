@@ -19,7 +19,7 @@ export default function Berita() {
   return (
     <section
       id="berita"
-      className="py-24 md:py-32 bg-white dark:bg-ink-900 transition-colors duration-300"
+      className="py-24 md:py-32 bg-white transition-colors duration-300"
     >
       <div className="container-app">
         <SectionTitle
@@ -36,7 +36,7 @@ export default function Berita() {
               className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeKategori === kat
                   ? "bg-tosca-600 text-white shadow-soft"
-                  : "bg-tosca-50 dark:bg-ink-800 text-ink-600 dark:text-ink-200 hover:bg-tosca-100 dark:hover:bg-ink-700"
+                  : "bg-tosca-50 text-ink-600 hover:bg-tosca-100"
               }`}
             >
               {kat}
@@ -55,7 +55,7 @@ export default function Berita() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 whileHover={{ y: -6 }}
-                className="bg-white dark:bg-ink-800 rounded-2xl overflow-hidden shadow-card hover:shadow-soft transition-shadow duration-300 border border-ink-100/60 dark:border-ink-700"
+                className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-soft transition-shadow duration-300 border border-ink-100/60"
               >
                 <div className="relative h-48 overflow-hidden">
                   <SafeImage
@@ -71,15 +71,15 @@ export default function Berita() {
                 </div>
 
                 <div className="p-6">
-                  <p className="text-ink-400 dark:text-ink-400 text-xs mb-2">
+                  <p className="text-ink-400 text-xs mb-2">
                     {item.tanggal}
                   </p>
 
-                  <h3 className="font-bold text-ink-900 dark:text-white text-lg leading-snug mb-2">
+                  <h3 className="font-bold text-ink-900 text-lg leading-snug mb-2">
                     {item.judul}
                   </h3>
 
-                  <p className="text-ink-500 dark:text-ink-300 text-sm leading-relaxed">
+                  <p className="text-ink-500 text-sm leading-relaxed">
                     {item.ringkasan}
                   </p>
                 </div>

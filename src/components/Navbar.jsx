@@ -6,15 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 import { GiWheat } from "react-icons/gi";
 import { navLinks, siteInfo } from "@/data/siteData";
-import useTheme from "@/hooks/useTheme";
-import ThemeToggle from "./ThemeToggle";
 
 const MotionLink = motion.create(Link);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -36,7 +33,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "glass dark:bg-ink-900/80 shadow-card py-3" : "bg-transparent py-6"
+          scrolled ? "glass shadow-card py-3" : "bg-transparent py-6"
         }`}
       >
         <div className="container-app flex items-center justify-between">
@@ -48,7 +45,7 @@ export default function Navbar() {
             >
               <GiWheat className="text-white text-xl" />
             </span>
-            <span className={`font-bold text-lg tracking-tight transition-colors duration-500 ${scrolled ? "text-ink-900 dark:text-white" : "text-white"}`}>
+            <span className={`font-bold text-lg tracking-tight transition-colors duration-500 ${scrolled ? "text-ink-900" : "text-white"}`}>
               {siteInfo.name}
             </span>
           </Link>
@@ -59,7 +56,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={`relative text-sm font-medium transition-colors duration-300 group ${
-                  scrolled ? "text-ink-700 dark:text-ink-200 hover:text-tosca-600 dark:hover:text-tosca-300" : "text-white/90 hover:text-white"
+                  scrolled ? "text-ink-700 hover:text-tosca-600" : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -84,11 +81,9 @@ export default function Navbar() {
           </Link>
 
           <div className="flex items-center gap-3">
-            <ThemeToggle theme={theme} toggleTheme={toggleTheme} scrolled={scrolled} />
-
             <button
               onClick={() => setMenuOpen(true)}
-              className={`lg:hidden text-2xl transition-colors duration-300 ${scrolled ? "text-ink-900 dark:text-white" : "text-white"}`}
+              className={`lg:hidden text-2xl transition-colors duration-300 ${scrolled ? "text-ink-900" : "text-white"}`}
               aria-label="Buka menu"
             >
               <HiOutlineMenuAlt3 />
@@ -103,7 +98,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-tosca-900 lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-[60] bg-tosca-900/70 backdrop-blur-xl lg:hidden overflow-y-auto"
           >
             <div className="flex justify-between items-center px-6 py-6">
               <span className="text-white font-bold text-lg">{siteInfo.name}</span>

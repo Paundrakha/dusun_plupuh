@@ -14,7 +14,7 @@ function MobileBar({ label, value, color, max, delay }) {
   return (
     <div className="flex items-center gap-2">
       <span className="w-4 shrink-0 text-[11px] font-semibold text-ink-400">{label}</span>
-      <div className="flex-1 h-4 rounded-full bg-ink-100 dark:bg-ink-700 overflow-hidden">
+      <div className="flex-1 h-4 rounded-full bg-ink-100 overflow-hidden">
         <motion.div
           className="h-full rounded-full"
           style={{ backgroundColor: color }}
@@ -24,7 +24,7 @@ function MobileBar({ label, value, color, max, delay }) {
           transition={{ duration: 0.6, delay, ease: "easeOut" }}
         />
       </div>
-      <span className="w-9 shrink-0 text-right text-xs tabular-nums font-semibold text-ink-700 dark:text-ink-100">
+      <span className="w-9 shrink-0 text-right text-xs tabular-nums font-semibold text-ink-700">
         {formatAngka(value)}
       </span>
     </div>
@@ -39,7 +39,7 @@ function MobileList({ data, max }) {
       {data.map((row, i) => (
         <div key={row.label}>
           <div className="flex items-baseline justify-between mb-1.5">
-            <span className="text-sm font-semibold text-ink-800 dark:text-white">{row.label} tahun</span>
+            <span className="text-sm font-semibold text-ink-800">{row.label} tahun</span>
             <span className="text-xs text-ink-400 tabular-nums">{formatAngka(row.laki + row.perempuan)} jiwa</span>
           </div>
           <div className="space-y-1.5">
@@ -59,10 +59,10 @@ export default function PopulationPyramid({ data }) {
   return (
     <div role="img" aria-label="Piramida penduduk menurut kelompok umur dan jenis kelamin">
       <div className="flex justify-center gap-6 mb-5 text-sm">
-        <span className="flex items-center gap-2 text-ink-700 dark:text-ink-200">
+        <span className="flex items-center gap-2 text-ink-700">
           <span className="w-3 h-3 rounded-sm" style={{ backgroundColor: COLOR_LAKI }} /> Laki-laki
         </span>
-        <span className="flex items-center gap-2 text-ink-700 dark:text-ink-200">
+        <span className="flex items-center gap-2 text-ink-700">
           <span className="w-3 h-3 rounded-sm" style={{ backgroundColor: COLOR_PEREMPUAN }} /> Perempuan
         </span>
       </div>
@@ -75,7 +75,7 @@ export default function PopulationPyramid({ data }) {
         {rows.map((row, i) => (
           <div key={row.label} className="grid grid-cols-[1fr_3.5rem_1fr] sm:grid-cols-[1fr_4.5rem_1fr] items-center gap-2">
             <div className="flex items-center justify-end gap-2">
-              <span className="text-xs tabular-nums font-medium text-ink-600 dark:text-ink-200">{formatAngka(row.laki)}</span>
+              <span className="text-xs tabular-nums font-medium text-ink-600">{formatAngka(row.laki)}</span>
               <motion.div
                 className="h-5 sm:h-6 rounded-l-md"
                 style={{ backgroundColor: COLOR_LAKI }}
@@ -85,7 +85,7 @@ export default function PopulationPyramid({ data }) {
                 transition={{ duration: 0.7, delay: i * 0.03, ease: "easeOut" }}
               />
             </div>
-            <span className="text-center text-xs font-semibold text-ink-500 dark:text-ink-300">{row.label}</span>
+            <span className="text-center text-xs font-semibold text-ink-500">{row.label}</span>
             <div className="flex items-center gap-2">
               <motion.div
                 className="h-5 sm:h-6 rounded-r-md"
@@ -95,7 +95,7 @@ export default function PopulationPyramid({ data }) {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.7, delay: i * 0.03, ease: "easeOut" }}
               />
-              <span className="text-xs tabular-nums font-medium text-ink-600 dark:text-ink-200">{formatAngka(row.perempuan)}</span>
+              <span className="text-xs tabular-nums font-medium text-ink-600">{formatAngka(row.perempuan)}</span>
             </div>
           </div>
         ))}

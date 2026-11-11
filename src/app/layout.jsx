@@ -24,15 +24,9 @@ export const viewport = {
   initialScale: 1,
 };
 
-// Dijalankan sebelum render pertama agar tema gelap langsung terpasang (tanpa kedipan).
-const themeInitScript = `(function(){try{var t=localStorage.getItem("plupuh-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}if(t==="dark"){document.documentElement.classList.add("dark")}}catch(e){}})();`;
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={poppins.variable} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
+    <html lang="id" className={poppins.variable}>
       <body>
         <MainLayout>{children}</MainLayout>
       </body>

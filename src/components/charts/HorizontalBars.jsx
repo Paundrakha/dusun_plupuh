@@ -16,13 +16,13 @@ export default function HorizontalBars({ items, total, color = "#1c847d", label 
       {items.map((item, i) => (
         <li key={item.label}>
           <div className="flex items-baseline justify-between gap-3 mb-1.5 text-sm">
-            <span className="text-ink-700 dark:text-ink-200 font-medium">{item.label}</span>
-            <span className="shrink-0 tabular-nums text-ink-900 dark:text-white font-semibold">
+            <span className="text-ink-700 font-medium">{item.label}</span>
+            <span className="shrink-0 tabular-nums text-ink-900 font-semibold">
               {formatAngka(item.jumlah)}
               <span className="ml-2 text-xs font-normal text-ink-400">{formatPersen(item.jumlah, total)}</span>
             </span>
           </div>
-          <div className="h-2.5 rounded-full bg-ink-100 dark:bg-ink-700 overflow-hidden">
+          <div className="h-2.5 rounded-full bg-ink-100 overflow-hidden">
             <motion.div
               className="h-full rounded-full"
               style={{ backgroundColor: color }}

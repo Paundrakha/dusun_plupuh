@@ -1,0 +1,3 @@
+Hapus file berikut dari proyek (tidak dipakai lagi):
+src/components/ThemeToggle.jsx
+src/hooks/useTheme.js
