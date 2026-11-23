@@ -1,3 +1,13 @@
+// =========================================================
+// DATA PADUKUHAN PLUPUH
+// Sebagian data di file ini diambil dari hasil riset publik
+// tentang Padukuhan Plupuh & wisata Jagad Bambu Nusantara,
+// dan sebagian lagi dari hasil survei lokasi KKN
+// (Sabtu, 25 Juli 2026). Data yang masih berupa perkiraan/
+// placeholder ditandai pada komentar di sampingnya —
+// silakan lengkapi dengan data pasti dari perangkat padukuhan.
+// =========================================================
+
 import { ringkasan } from "./kependudukan";
 
 const imgJagad = "/images/jagad.jpeg";
@@ -63,11 +73,33 @@ export const siteInfo = {
     "https://www.google.com/maps?q=9C4V%2BXQ7+Plupuh,+Wukirsari,+Kec.+Cangkringan,+Kabupaten+Sleman,+Daerah+Istimewa+Yogyakarta+55583&output=embed",
   mapsDirectionUrl:
     "https://www.google.com/maps/search/?api=1&query=Padukuhan+Plupuh%2C+Wukirsari%2C+Cangkringan%2C+Sleman%2C+Yogyakarta&utm_source=chatgpt.com",
-  phone: "+62 813-3768-6088", // placeholder — ganti dengan nomor kontak resmi padukuhan
-  whatsapp: "+62 813-3768-6088", // placeholder
   instagram: "https://instagram.com/wisata_desa_jagadbambu_",
-  tiktok: "https://tiktok.com/@wisata_konservasi_bambu_plupuh", 
+  tiktok: "https://tiktok.com/@wisata_konservasi_bambu_plupuh",
+  websiteWisata: "", // TODO: isi dengan URL website wisata Jagad Bambu Nusantara (kosong = tombol nonaktif)
 };
+
+// Akun sosial media yang ditampilkan di section "Sosial Media".
+// Kosongkan `url` bila belum ada; kartunya otomatis tampil "Segera hadir".
+export const sosialMediaData = [
+  {
+    id: "jagad-bambu",
+    nama: "Wisata Jagad Bambu Nusantara",
+    desc: "Kabar terbaru, agenda Pasar Minggu Pon, dan dokumentasi wisata konservasi bambu.",
+    akun: [
+      { platform: "Instagram", handle: "@wisata_desa_jagadbambu_", url: siteInfo.instagram },
+      { platform: "TikTok", handle: "@wisata_konservasi_bambu_plupuh", url: siteInfo.tiktok },
+    ],
+  },
+  {
+    id: "karang-taruna",
+    nama: "Karang Taruna Plupuh",
+    desc: "Kegiatan pemuda dan pemudi Padukuhan Plupuh.",
+    akun: [
+      { platform: "Instagram", handle: "", url: "" }, // TODO: isi akun Instagram Karang Taruna
+      { platform: "TikTok", handle: "", url: "" }, // TODO: isi akun TikTok Karang Taruna
+    ],
+  },
+];
 
 export const navLinks = [
   { label: "Home", href: "/#home" },
@@ -78,12 +110,15 @@ export const navLinks = [
   { label: "Galeri", href: "/#galeri" },
   { label: "Statistik", href: "/statistik" },
   { label: "Lokasi", href: "/#lokasi" },
-  { label: "Kontak", href: "/#kontak" },
+  { label: "Sosial Media", href: "/#sosial-media" },
 ];
 
 export const profilData = {
-  sejarah:
-    "Padukuhan Plupuh berada di Kalurahan Wukirsari, Kapanewon Cangkringan, di lereng selatan Gunung Merapi. Sejak dahulu Plupuh dikenal sebagai penghasil aneka peralatan rumah tangga berbahan bambu dan batu, dengan rumpun bambu yang tumbuh subur di hampir setiap sudut dusun. Mayoritas warga bekerja sebagai buruh tani, buruh, dan sebagian sebagai pegawai negeri. Nilai gotong royong masih sangat kuat dijaga hingga kini.",
+  sejarah: [
+    "Padukuhan Plupuh berada di Kalurahan Wukirsari, Kapanewon Cangkringan, di lereng selatan Gunung Merapi.",
+    "Sejak dahulu Plupuh dikenal sebagai penghasil aneka peralatan rumah tangga berbahan bambu dan batu, dengan rumpun bambu yang tumbuh subur di hampir setiap sudut dusun.",
+    "Mayoritas warga bekerja sebagai buruh tani, buruh, dan sebagian sebagai pegawai negeri. Nilai gotong royong masih sangat kuat dijaga hingga kini.",
+  ],
   visi:
     "Menjadikan Padukuhan Plupuh sebagai kawasan yang berbudaya, guyub, dan sejahtera melalui pengembangan wisata konservasi bambu berbasis kearifan lokal dan gotong royong masyarakat.",
   misi: [
@@ -118,14 +153,14 @@ export const profilData = {
       desc: "Bupati Sleman meresmikan destinasi wisata konservasi bambu Jagad Bambu Nusantara, digagas bersama mahasiswa STIE Pariwisata API Yogyakarta.",
     },
     {
+      year: "22 Maret 2026",
+      title: "Minggu Pon Pertama",
+      desc: "Minggu Pon pertama dilaksanakan di Padukuhan Plupuh, menghadirkan pasar rakyat, kuliner, kerajinan, serta pentas seni dan budaya warga.",
+    },
+    {
       year: "26 Apr 2026",
       title: "Minggu Pon Pertama",
       desc: "Pasar rakyat selapanan Minggu Pon pertama digelar, menampilkan kuliner, kerajinan, dan pentas seni warga.",
-    },
-    {
-      year: "22 Maret 2026",
-      title: "Minggu PON Pertama ",
-      desc: "Minggu Pon pertama dilaksanakan di Padukuhan Plupuh, menghadirkan pasar rakyat, kuliner, kerajinan, serta pentas seni dan budaya warga..",
     },
   ],
 };

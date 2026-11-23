@@ -12,6 +12,15 @@ const infoCards = [
   { icon: FaHome, label: "Jumlah Warga", value: `${profilData.demografi.jumlahWarga} Warga` },
 ];
 
+function SubHeading({ children }) {
+  return (
+    <h3 className="flex items-center gap-3 text-xl font-bold text-ink-900 mb-4">
+      <span className="w-1.5 h-6 rounded-full bg-tosca-500" />
+      {children}
+    </h3>
+  );
+}
+
 export default function Profil() {
   return (
     <section id="profil" className="relative py-24 md:py-32 bg-white overflow-hidden transition-colors duration-300">
@@ -31,23 +40,33 @@ export default function Profil() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-xl font-bold text-ink-900 mb-3">Sejarah Singkat</h3>
-              <p className="text-ink-500 leading-relaxed">{profilData.sejarah}</p>
+              <SubHeading>Sejarah Singkat</SubHeading>
+              <div className="space-y-3 text-ink-600 leading-7">
+                {profilData.sejarah.map((paragraf, i) => (
+                  <p key={i}>{paragraf}</p>
+                ))}
+              </div>
             </div>
+
             <div>
-              <h3 className="text-xl font-bold text-ink-900 mb-3">Visi</h3>
-              <p className="text-ink-500 leading-relaxed">{profilData.visi}</p>
+              <SubHeading>Visi</SubHeading>
+              <blockquote className="rounded-2xl bg-tosca-50 border-l-4 border-tosca-500 px-5 py-4 text-ink-700 leading-7">
+                {profilData.visi}
+              </blockquote>
             </div>
+
             <div>
-              <h3 className="text-xl font-bold text-ink-900 mb-3">Misi</h3>
-              <ul className="space-y-2">
+              <SubHeading>Misi</SubHeading>
+              <ol className="space-y-3">
                 {profilData.misi.map((item, i) => (
-                  <li key={i} className="flex gap-3 text-ink-500 leading-relaxed">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-tosca-500 shrink-0" />
-                    {item}
+                  <li key={i} className="flex gap-4 text-ink-600 leading-7">
+                    <span className="mt-0.5 w-7 h-7 shrink-0 rounded-full bg-tosca-600 text-white text-xs font-bold flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <span>{item}</span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
 
             <div className="grid grid-cols-2 gap-4 pt-2">
@@ -75,8 +94,8 @@ export default function Profil() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h3 className="text-xl font-bold text-ink-900 mb-8">Perjalanan Padukuhan</h3>
-            <div className="relative pl-8 border-l-2 border-tosca-200 space-y-10">
+            <SubHeading>Perjalanan Padukuhan</SubHeading>
+            <div className="relative mt-8 pl-8 border-l-2 border-tosca-200 space-y-10">
               {profilData.timeline.map((item, i) => (
                 <motion.div
                   key={item.year}
@@ -89,14 +108,14 @@ export default function Profil() {
                   <span className="absolute -left-[2.35rem] top-0 w-4 h-4 rounded-full bg-tosca-600 ring-4 ring-tosca-100" />
                   <span className="text-tosca-600 font-bold text-sm">{item.year}</span>
                   <h4 className="text-lg font-semibold text-ink-900 mt-1">{item.title}</h4>
-                  <p className="text-ink-500 text-sm mt-1.5 leading-relaxed">{item.desc}</p>
+                  <p className="text-ink-600 text-sm mt-1.5 leading-6">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
             <div className="mt-10 bg-section-gradient rounded-2xl p-6 shadow-card">
               <h4 className="font-semibold text-ink-900 mb-3">Fokus Pengembangan Saat Ini</h4>
-              <p className="text-ink-500 text-sm leading-relaxed">
+              <p className="text-ink-600 text-sm leading-6">
                 Padukuhan Plupuh kini berfokus mengembangkan{" "}
                 <span className="font-semibold text-tosca-600">Jagad Bambu Nusantara</span> —
                 wisata konservasi bambu yang menjadi penggerak ekonomi warga sekaligus benteng ekologis
