@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaInstagram, FaTiktok, FaMapMarkedAlt } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaMapMarkedAlt, FaGlobe } from "react-icons/fa";
 import SafeImage from "@/components/SafeImage";
 import SectionTitle from "@/components/SectionTitle";
 import Button from "@/components/Button";
@@ -31,6 +31,15 @@ export default function Wisata() {
               </Button>
               <Button href={siteInfo.tiktok} variant="outline" icon={FaTiktok}>
                 TikTok
+              </Button>
+              {/* Isi siteInfo.websiteWisata di src/data/siteData.js; selama kosong tombol tampil nonaktif */}
+              <Button
+                href={siteInfo.websiteWisata || undefined}
+                disabled={!siteInfo.websiteWisata}
+                variant="outline"
+                icon={FaGlobe}
+              >
+                Website Wisata
               </Button>
               <Button href="#lokasi" variant="primary" icon={FaMapMarkedAlt}>
                 Lihat Lokasi

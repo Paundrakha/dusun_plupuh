@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
-import { GiWheat } from "react-icons/gi";
 import { navLinks, siteInfo } from "@/data/siteData";
 
 const MotionLink = motion.create(Link);
@@ -17,6 +16,13 @@ export default function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Tautan anchor pada halaman yang sama ditangani useLenis; ia memberi tahu lewat event ini.
+  useEffect(() => {
+    const close = () => setMenuOpen(false);
+    window.addEventListener("plupuh:navigate", close);
+    return () => window.removeEventListener("plupuh:navigate", close);
   }, []);
 
   useEffect(() => {
@@ -38,13 +44,6 @@ export default function Navbar() {
       >
         <div className="container-app flex items-center justify-between">
           <Link href="/#home" className="flex items-center gap-2.5">
-            <span
-              className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-500 ${
-                scrolled ? "bg-tosca-600" : "bg-white/20 border border-white/40"
-              }`}
-            >
-              <GiWheat className="text-white text-xl" />
-            </span>
             <span className={`font-bold text-lg tracking-tight transition-colors duration-500 ${scrolled ? "text-ink-900" : "text-white"}`}>
               {siteInfo.name}
             </span>
@@ -68,17 +67,6 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-
-          <Link
-            href="/#kontak"
-            className={`hidden lg:inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-              scrolled
-                ? "bg-tosca-600 text-white hover:bg-tosca-700"
-                : "bg-white/15 text-white border border-white/40 hover:bg-white/25"
-            }`}
-          >
-            Hubungi Kami
-          </Link>
 
           <div className="flex items-center gap-3">
             <button
@@ -119,7 +107,10 @@ export default function Navbar() {
                 <MotionLink
                   key={link.label}
                   href={link.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    document.body.style.overflow = "";
+                  }}
                   variants={{
                     open: { opacity: 1, y: 0 },
                     closed: { opacity: 0, y: 20 },

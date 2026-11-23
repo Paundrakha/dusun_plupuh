@@ -38,6 +38,10 @@ export default function useLenis() {
         // Fase capture + stopPropagation agar next/link tidak ikut menavigasi/melompat.
         e.preventDefault();
         e.stopPropagation();
+        // Menu mobile mengunci scroll body; lepas dulu agar scroll ke tujuan langsung berjalan,
+        // lalu beri tahu komponen lain (mis. menu mobile) agar menutup diri.
+        document.body.style.overflow = "";
+        window.dispatchEvent(new Event("plupuh:navigate"));
         lenis.scrollTo(target, { offset: -80 });
         window.history.pushState(null, "", `${window.location.pathname}${id}`);
       }

@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { GiWheat } from "react-icons/gi";
-import { FaInstagram, FaFacebookF, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { navLinks, siteInfo } from "@/data/siteData";
 
 export default function Footer() {
@@ -10,10 +9,7 @@ export default function Footer() {
     <footer className="bg-ink-900 text-white pt-16 pb-8">
       <div className="container-app grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2.5 mb-4">
-            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-tosca-600">
-              <GiWheat className="text-white text-xl" />
-            </span>
+          <div className="mb-4">
             <span className="font-bold text-lg">{siteInfo.name}</span>
           </div>
           <p className="text-ink-300 text-sm max-w-sm leading-relaxed">
@@ -22,13 +18,12 @@ export default function Footer() {
           </p>
           <div className="flex gap-3 mt-6">
             {[
-              { Icon: FaInstagram, href: siteInfo.instagram },
-              // { Icon: FaFacebookF, href: siteInfo.facebook },
-              { Icon: FaWhatsapp, href: `https://wa.me/${siteInfo.whatsapp}` },
-              // { Icon: FaEnvelope, href: `mailto:${siteInfo.email}` },
-            ].map(({ Icon, href }, i) => (
+              { Icon: FaInstagram, href: siteInfo.instagram, label: "Instagram Jagad Bambu" },
+              { Icon: FaTiktok, href: siteInfo.tiktok, label: "TikTok Jagad Bambu" },
+            ].map(({ Icon, href, label }, i) => (
               <a
                 key={i}
+                aria-label={label}
                 href={href}
                 target="_blank"
                 rel="noreferrer"
@@ -56,7 +51,6 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4">Alamat</h4>
           <p className="text-ink-300 text-sm leading-relaxed">{siteInfo.address}</p>
-          <p className="text-ink-300 text-sm mt-3">{siteInfo.phone}</p>
         </div>
       </div>
 

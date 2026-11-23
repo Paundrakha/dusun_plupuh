@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { HiOutlineArrowNarrowDown } from "react-icons/hi";
-import { FaCompass, FaImages } from "react-icons/fa";
+import { FaCompass } from "react-icons/fa";
 import Button from "@/components/Button";
 import FloatingLeaves from "@/components/FloatingLeaves";
 import { siteInfo } from "@/data/siteData";
@@ -69,9 +69,6 @@ export default function Hero() {
         >
           <Button href="#profil" variant="primary" icon={FaCompass}>
             Jelajahi Padukuhan
-          </Button>
-          <Button href="#galeri" variant="ghost" icon={FaImages}>
-            Lihat Galeri
           </Button>
         </motion.div>
       </motion.div>
