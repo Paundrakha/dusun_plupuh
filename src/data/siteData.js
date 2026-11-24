@@ -63,21 +63,22 @@ export const siteInfo = {
     "https://www.google.com/maps?q=9C4V%2BXQ7+Plupuh,+Wukirsari,+Kec.+Cangkringan,+Kabupaten+Sleman,+Daerah+Istimewa+Yogyakarta+55583&output=embed",
   mapsDirectionUrl:
     "https://www.google.com/maps/search/?api=1&query=Padukuhan+Plupuh%2C+Wukirsari%2C+Cangkringan%2C+Sleman%2C+Yogyakarta&utm_source=chatgpt.com",
-  instagram: "https://instagram.com/wisata_desa_jagadbambu_",
-  tiktok: "https://tiktok.com/@wisata_konservasi_bambu_plupuh",
-  websiteWisata: "", // TODO: isi dengan URL website wisata Jagad Bambu Nusantara (kosong = tombol nonaktif)
+  igWisata: "https://instagram.com/wisata_desa_jagadbambu_",
+  ttWisata: "https://tiktok.com/@wisata_konservasi_bambu_plupuh",
+  igPuspa: "https://instagram.com/remaja_puspataruna",
+  ttPuspa: "https://tiktok.com/@remaja.puspataruna",
+  websiteWisata: "", 
 };
 
-// Akun sosial media yang ditampilkan di section "Sosial Media".
-// Kosongkan `url` bila belum ada; kartunya otomatis tampil "Segera hadir".
+
 export const sosialMediaData = [
   {
     id: "jagad-bambu",
     nama: "Wisata Jagad Bambu Nusantara",
     desc: "Kabar terbaru, agenda Pasar Minggu Pon, dan dokumentasi wisata konservasi bambu.",
     akun: [
-      { platform: "Instagram", handle: "@wisata_desa_jagadbambu_", url: siteInfo.instagram },
-      { platform: "TikTok", handle: "@wisata_konservasi_bambu_plupuh", url: siteInfo.tiktok },
+      { platform: "Instagram", handle: "@wisata_desa_jagadbambu_", url: siteInfo.igWisata },
+      { platform: "TikTok", handle: "@wisata_konservasi_bambu_plupuh", url: siteInfo.ttWisata },
     ],
   },
   {
@@ -85,8 +86,8 @@ export const sosialMediaData = [
     nama: "Karang Taruna Plupuh",
     desc: "Kegiatan pemuda dan pemudi Padukuhan Plupuh.",
     akun: [
-      { platform: "Instagram", handle: "", url: "" }, // TODO: isi akun Instagram Karang Taruna
-      { platform: "TikTok", handle: "", url: "" }, // TODO: isi akun TikTok Karang Taruna
+      { platform: "Instagram", handle: "@remaja_puspataruna", url: siteInfo.igPuspa }, 
+      { platform: "TikTok", handle: "@remaja.puspataruna", url: siteInfo.ttPuspa }, 
     ],
   },
 ];

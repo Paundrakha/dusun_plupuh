@@ -1,1 +1,0 @@
-Hapus folder public/images/potensi/ (tidak dipakai lagi karena Potensi kembali memakai ikon).
