@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import MainLayout from "@/components/MainLayout";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -10,6 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Padukuhan Plupuh | Padukuhan Asri, Modern, dan Guyub",
     template: "%s | Padukuhan Plupuh",

@@ -1,13 +1,3 @@
-// =========================================================
-// DATA PADUKUHAN PLUPUH
-// Sebagian data di file ini diambil dari hasil riset publik
-// tentang Padukuhan Plupuh & wisata Jagad Bambu Nusantara,
-// dan sebagian lagi dari hasil survei lokasi KKN
-// (Sabtu, 25 Juli 2026). Data yang masih berupa perkiraan/
-// placeholder ditandai pada komentar di sampingnya —
-// silakan lengkapi dengan data pasti dari perangkat padukuhan.
-// =========================================================
-
 import { ringkasan } from "./kependudukan";
 
 const imgJagad = "/images/jagad.jpeg";
@@ -351,5 +341,5 @@ export const galeriData = [
   { id: 43, kategori: "Kegiatan Warga", src: imgsapi2, caption: "Gerobak Sapi" },
   { id: 44, kategori: "Kegiatan Warga", src: imghadia, caption: "" },
   { id: 45, kategori: "Kegiatan Warga", src: imgmahasiswa, caption: "Mahasiswa/i KKN UNISA " },
-    { id: 46, kategori: "Kegiatan Warga", src: imgta3, caption: "Makanan & snack" },
+  { id: 46, kategori: "Kegiatan Warga", src: imgta3, caption: "Makanan & snack" },
 ];

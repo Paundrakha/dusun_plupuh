@@ -1,0 +1,11 @@
+import { SITE_URL } from "@/lib/site";
+
+// Dihasilkan otomatis Next.js di /sitemap.xml
+// Section pada beranda (#profil, #potensi, dst.) bukan URL terpisah, jadi tidak dimasukkan.
+export default function sitemap() {
+  const now = new Date();
+  return [
+    { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/statistik`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+  ];
+}
