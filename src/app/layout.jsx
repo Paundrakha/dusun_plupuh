@@ -13,11 +13,11 @@ const poppins = Poppins({
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Padukuhan Plupuh | Padukuhan Asri, Modern, dan Guyub",
+    default: "Padukuhan Plupuh Wukirsari | Cangkringan, Sleman",
     template: "%s | Padukuhan Plupuh",
   },
   description:
-    "Website profil resmi Padukuhan Plupuh — informasi profil, potensi, statistik kependudukan, berita, galeri, dan kontak padukuhan.",
+    "Website informasi Padukuhan Plupuh, Kalurahan Wukirsari, Kapanewon Cangkringan, Kabupaten Sleman. Temukan profil, potensi wilayah, kegiatan masyarakat, dan wisata Jagad Bambu.",
   icons: { icon: "/favicon.svg" },
 };
 
